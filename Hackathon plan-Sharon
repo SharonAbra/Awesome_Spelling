@@ -1,0 +1,41 @@
+Hackathon - Sharon
+
+General ides:
+I plan do build a spaelling game for young children, in a drag and drop theme.
+Each page of the website will include a single riddle, and they will be connected to form a series of riddles, each one earns the user some points.
+
+Steps:
+
+* make a folder with words and corresponding images.
+
+* build one sample page layout (a skeleton to be used on the rest of the pages). This will include a simple navbar, an image, boxes conatining individual letters, empty boxes to drop the letters, back button. all in HTML.
+
+* build function to drag and drop letters. 
+
+* build a function to return letters to their place.
+
+* build a function with conditionals to determine what happens when the spelling is correct / incorrect.
+
+* make a congratulatory page with button to next riddle.
+
+* style the page with css.
+
+* create home page.
+
+* style home page.
+
+* link the home page to the first riddle with "start" button.
+
+* make a folder with words and corresponding images.
+
+* create the rest of the riddle pages.
+
+* make a 2m video
+
+optional features:
+ - quit button
+ - hint button
+ - point accumulation using setInterval
+ - include catagories in home page
+ - include sounds
+ - randomize the order of riddles

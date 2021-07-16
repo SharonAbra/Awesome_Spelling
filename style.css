@@ -1,0 +1,88 @@
+body {
+	background: #A6C9FF;
+	font-family: 'Short Stack', cursive;
+
+}
+
+/*Style for navigation bar*/
+.navigation {
+	background-color: #FFA1CA;
+}
+
+/*Style for the image*/
+.image {
+	display: block;
+	width: 200px;
+	height: auto;
+	margin-top: 40px;
+	margin-left: auto;
+  	margin-right: auto;
+}
+
+/*.image:hover {
+	
+	align-self: flex-end;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce-4;
+    animation-timing-function: ease;
+    }
+    @keyframes bounce-4 {
+        0%   { transform: scale(1,1)    translateY(0); }
+        10%  { transform: scale(1.1,.9) translateY(0); }
+        30%  { transform: scale(.9,1.1) translateY(-100px); }
+        50%  { transform: scale(1,1)    translateY(0); }
+        100% { transform: scale(1,1)    translateY(0); }
+    }
+}*/
+
+/*Style for the section of the empty boxes*/
+.empty {
+	display: flex;
+	justify-content: center;
+}
+
+/*Style for the empty Boxes*/
+.box {
+	background: #FFD9A1;
+	border: 2px solid black;
+	width: 70px;
+	height: 70px;
+	margin: 50px 20px;
+}
+	
+.box:hover{
+	transform: scale(1.4);
+}
+       
+
+/*Style for the section of the letters*/
+.letters {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+}
+
+/*Style for the letter boxes*/
+.letter {
+	background: #A3FFDA;
+	border: 2px solid black;
+	width: 70px;
+	height: 70px;
+	font-size: 250%;
+	text-align: center;
+}
+
+.letter:hover {
+	box-shadow: 10px 10px 8px #FFD9A1, 15px 15px 8px #A6EDFF, 5px 5px 8px #FFA1CA;
+}	
+
+.empty .letter {
+	margin: 50px 20px;
+}
+
+
+.letters .letter {
+	margin: 10px 10px;
+}
