@@ -15,9 +15,9 @@ dragTarget.forEach(item => {item.addEventListener("dragleave", dragLeave)});
 dragTarget.forEach(item => {item.addEventListener("dragover", allowDrop)});
 dragTarget.forEach(item => {item.addEventListener("drop", drop)});
 
-let dropBackZone = document.querySelector(".letters");
-dropBackZone.addEventListener("drop", drop);
-dropBackZone.addEventListener("dragover", allowDrop);
+// let dropBackZone = document.querySelector(".letters");
+// dropBackZone.addEventListener("drop", drop);
+// dropBackZone.addEventListener("dragover", allowDrop);
 
 
 // functions for event listeners
@@ -44,15 +44,26 @@ function dragLeave(event) {
 	event.target.style.border= "2px solid black";
 }
 
-function allowDrop(event) {
-	event.preventDefault();
-}
+// function allowDrop(event) {
+// 		event.preventDefault();	
+// }
 
+function allowDrop(event) {
+    let t = event.target;
+    // Find the drop target
+    while (t !== null && !t.classList.contains("box")) {
+        t = t.parentNode;
+    }
+    // If the target is empty allow the drop.
+    if (t && t.childNodes.length == 0) {
+        event.preventDefault();
+    }
+    return false;
+}
 function drop(event) {
 	event.preventDefault();
 	let data = event.dataTransfer.getData("text/html");
 	let a = document.getElementById(data);
-  	// event.target.replaceWith(a);
   	event.target.appendChild(a);
   	event.target.style.border = "none";
   	boardFull(); 
@@ -78,7 +89,7 @@ function emptyBoxes() {
  // which include the required letters of the animal name
 
 function letterBoxes() {
-let letter;
+	let letter;
 
 	let letterList = [];
 	let word = document.querySelector("img").getAttribute("id");
@@ -110,6 +121,7 @@ let letter;
 function boardFull() {
 	let boardIsFull = true;
 	let boxEmpty = document.querySelectorAll(".box");
+	
 	for (let g = 0; g < boxEmpty.length; g++) {
 		if (boxEmpty[g].firstElementChild === null) {
 			boardIsFull = false;
