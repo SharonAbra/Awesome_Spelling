@@ -20,6 +20,44 @@ dropBackZone.addEventListener("drop", drop);
 dropBackZone.addEventListener("dragover", allowDrop);
 
 
+// functions for event listeners
+function drag(event) {
+	event.target.style.opacity = "0.5";
+}
+
+function dragEnd(event) {
+	event.target.style.opacity = "1";
+
+}
+
+function dragStart(event) {
+	event.target.style.transform = "scale(1)";
+	event.dataTransfer.setData("text/html", event.target.id);
+}
+
+function dragEnter(event) {
+	event.target.style.border = "5px dashed #FFA1CA";
+}
+
+function dragLeave(event) {
+	event.preventDefault();
+	event.target.style.border= "2px solid black";
+}
+
+function allowDrop(event) {
+	event.preventDefault();
+}
+
+function drop(event) {
+	event.preventDefault();
+	let data = event.dataTransfer.getData("text/html");
+	let a = document.getElementById(data);
+  	// event.target.replaceWith(a);
+  	event.target.appendChild(a);
+  	event.target.style.border = "none";
+  	boardFull(); 
+}
+
 // Function to create empty boxes according to 
 // the number of letters in the animal name
 function emptyBoxes() {
@@ -68,47 +106,7 @@ let letter;
 	}
 }
 
-
-// functions for event listeners
-function drag(event) {
-	event.target.style.opacity = "0.5";
-}
-
-function dragEnd(event) {
-	event.target.style.opacity = "1";
-
-}
-
-function dragStart(event) {
-	event.target.style.transform = "scale(1)";
-	event.dataTransfer.setData("text/html", event.target.id);
-}
-
-function dragEnter(event) {
-	event.target.style.border = "5px dashed #FFA1CA";
-}
-
-function dragLeave(event) {
-	event.preventDefault();
-	event.target.style.border= "2px solid black";
-}
-
-function allowDrop(event) {
-	event.preventDefault();
-}
-
-function drop(event) {
-	event.preventDefault();
-	let data = event.dataTransfer.getData("text/html");
-	let a = document.getElementById(data);
-  	// event.target.replaceWith(a);
-  	event.target.appendChild(a);
-  	event.target.style.border = "none";
-  	boardFull();
-  
-}
-
-//  function to be triggered when all the empty boxes have been filled.
+//  function that checks if all the slots have been filled
 function boardFull() {
 	let boardIsFull = true;
 	let boxEmpty = document.querySelectorAll(".box");
@@ -141,6 +139,7 @@ function correct() {
 		allEmpty.forEach(node => node.style.border = "5px solid #FFA1CA");
 		let cont = document.querySelector(".continue");
 		cont.classList.remove("continue");
+
 	}
 }
 

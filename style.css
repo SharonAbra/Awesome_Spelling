@@ -88,7 +88,6 @@ h3 {
 
 /*Style for the image*/
 .image {
-	/*width: 120px;*/
 	height: auto;
 }
 
@@ -142,9 +141,9 @@ h3 {
  
 .bubble {
 
-  width: 15%;
+  width: 18%;
   height: 18%;
-  left: 55%;
+  left: 60%;
   top: 17%;
   display: flex;
   flex-wrap: wrap;
@@ -173,4 +172,9 @@ h3 {
 
 button {
 	border: none;
+}
+
+p {
+	
+	font-weight: bold;
 }
