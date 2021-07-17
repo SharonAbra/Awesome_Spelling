@@ -44,10 +44,6 @@ function dragLeave(event) {
 	event.target.style.border= "2px solid black";
 }
 
-// function allowDrop(event) {
-// 		event.preventDefault();	
-// }
-
 function allowDrop(event) {
     let t = event.target;
     // Find the drop target
